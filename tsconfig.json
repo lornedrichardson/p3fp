@@ -98,7 +98,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/api/games/route.js", "app/api/user/signup/route.js"  ],
+, "app/api/games/route.js", "app/api/user/signup/route.ts"  ],
   "exclude": [
     "node_modules"
   ]
