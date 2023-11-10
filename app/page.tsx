@@ -14,26 +14,21 @@ export default function Login() {
       const result = await fetch('api/user', {
         method: 'POST',
         headers: { "Content-type": "application/json; charset=UTF-8" },
-        body: JSON.stringify({ username: username, pw: password })
+        body: JSON.stringify({ username: username, pw: password,email:session.user.email??''})
       })
       const data = await result.json()
       if (data.isLogin) {
         push(`/games`)
       } else {
-        alert('dont find match user. Do you want to try again or sign up?')
+        signOut()
+        // alert('dont find match user. Do you want to try again or sign up?')
       }
     }
     fetchresdata()
   }
   if (session && session.user) {
-    return (
-      <div className="flex gap-4 ml-auto">
-        <p className="text-sky-600">{session.user.email}</p>
-        <button onClick={() => signOut()} className="text-red-600">
-          Sign Out
-        </button>
-      </div>
-    );
+    console.log('yes')
+    datapass()
   }
   // useEffect(()=>{
   //   deleteTokens()
@@ -92,7 +87,10 @@ export default function Login() {
               Sign in
             </button>
           </div>
-          <button onClick={() => signIn()}>GOOGLE</button>
+          <button
+          className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          onClick={() => signIn()}>GOOGLE
+          </button>
         </form>
 
 

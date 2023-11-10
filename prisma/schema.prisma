@@ -26,7 +26,8 @@ model Gamedata {
 
 model Userdata {
   user_id  Int        @id(map: "userdata_pk") @default(autoincrement())
-  username String     @db.VarChar
+  username String     @db.VarChar @unique
   pw       String     @db.VarChar
+  email    String     @db.VarChar @unique
   gamedata Gamedata[]
 }
