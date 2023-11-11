@@ -2,6 +2,9 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import '../../styles/globals.css'
+import Image from 'next/image'
+import background from '../../public/neonBoard.jpg'
+
 
 
 export default function Page() {
@@ -26,15 +29,21 @@ export default function Page() {
         fetchresdata()
     }
     return (
-        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 h-screen bg-slate-800">
+        <main className='flex flex-col items-center justify-between'>
+            <div className='relative w-full'>
+                <div className='absolute -z-10 w-full'>
+                    <Image src={background} alt="background image" className='w-screen h-screen' width={1000} height={1000} />
+                </div>
+                <div>
+                <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 h-screen">
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             </div>
             <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-                <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-indigo-500">
-                    Create Account
+                <h2 className="mt-10 text-center text-3xl font-bold leading-9 tracking-tight text-red-600">
+                    Create Your Account
                 </h2>
             </div>
-            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+            <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm text-center text-white">
                 <form className="space-y-6"
                     onSubmit={(e) => {
                         e.preventDefault()
@@ -46,29 +55,32 @@ export default function Page() {
                         }
                     }}>
                     <div>
-                        <label className="block text-sm font-medium leading-6 text-gray-400">User name</label>
+                        <label className="block text-sm font-medium leading-6 text-gray-200">Username</label>
                         <input 
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-lg sm:leading-6 indent-2"
                         type="text" 
                         onChange={(e) => setUsername(e.target.value)} />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium leading-6 text-gray-400">Password</label>
+                        <label className="block text-sm font-medium leading-6 text-gray-200">Password</label>
                         <input 
-                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 indent-2"
                         type="password" 
                         onChange={(e) => setPassword(e.target.value)} />
                     </div>
                     <button 
-                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="flex w-full justify-center rounded-md bg-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                     type='submit'>Sign Up</button>
                     <button type="button"  
-                    className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="flex w-full justify-center rounded-md bg-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                     onClick={() => { push('/') }}>Login page</button>
                 </form>
+                {isCreate ? '' : 'Username exists. Please try different username.'}
             </div>
-            {isCreate ? '' : 'User name alright used Please try different user name'}
         </div>
+                </div>
+            </div>
+        </main>
     )
 }
 
