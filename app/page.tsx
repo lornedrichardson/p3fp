@@ -14,7 +14,7 @@ export default function Login() {
       const result = await fetch('api/user', {
         method: 'POST',
         headers: { "Content-type": "application/json; charset=UTF-8" },
-        body: JSON.stringify({ username: username, pw: password,email:session.user.email??''})
+        body: JSON.stringify({ username: username, pw: password,email:session?.user?.email??''})
       })
       const data = await result.json()
       if (data.isLogin) {
