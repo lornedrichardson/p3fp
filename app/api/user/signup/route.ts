@@ -4,10 +4,10 @@ import { prisma } from '../../../../server/db/client';
 
 export async function POST(req: Request, res: NextApiResponse) {
   try {
-    const { username, password } = await req.json();
+    const { username, pw ,email } = await req.json();
     console.log(username)
     const data = await prisma.userdata.create({
-      data: { username, pw: password },
+      data: { username, pw, email },
     });
     return NextResponse.json({ isCreate: true });
   } catch (error) {

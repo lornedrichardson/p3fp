@@ -10,6 +10,7 @@ export async function GET() {
 
 export async function POST(request) {
     const { data } = await request.json()
+    data.wagernum = Number(data.wagernum)
     try {
         const createData = await prisma.gamedata.create({
             data
@@ -25,6 +26,7 @@ export async function POST(request) {
 //edit data from gamedata table
 export async function PUT(request) {
     const { session_id, data }= await request.json()
+    data.wagernum = Number(data.wagernum)
     try {
         const dataInput = await prisma.gamedata.update({
             where:{
