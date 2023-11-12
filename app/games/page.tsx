@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation'
 import Edit from "./edit"
 import Delete from "./delete"
 import Image from 'next/image';
-import background from '../../public/felt.jpg';
+import background from '../../public/blueFelt.jpg';
 
 
 const Page = async ({
@@ -111,20 +111,20 @@ const Page = async ({
               <Filters />
               <div className="container">
                 <table className="w-screen table-auto">
-                  <thead className="text-white">
+                  <thead className="text-white bg-gradient-to-r from-red-700 to-black ">
                     <tr>
                       <th className="px-4 py-2"></th>
-                      <th className="px-4 py-2 bg-red-600 rounded-md">Casino</th>
-                      <th className="px-4 py-2 bg-black rounded-md">Machine</th>
-                      <th className="px-4 py-2 bg-red-600 rounded-md">Session Start</th>
-                      <th className="px-4 py-2 bg-black rounded-md">Session Stop</th>
-                      <th className="px-4 py-2 bg-red-600 rounded-md">Game Type</th>
-                      <th className="px-4 py-2 bg-black rounded-md">Game</th>
-                      <th className="px-4 py-2 bg-red-600 rounded-md">Wager Amount</th>
-                      <th className="px-4 py-2 bg-black rounded-md">Wager Number</th>
-                      <th className="px-4 py-2 bg-red-600 rounded-md">Win</th>
-                      <th className="px-4 py-2 bg-black rounded-md">Loss</th>
-                      <th className="px-4 py-2 bg-red-600 rounded-md">Notes</th>
+                      <th className="px-4 py-2">Casino</th>
+                      <th className="px-4 py-2">Machine</th>
+                      <th className="px-4 py-2">Session Start</th>
+                      <th className="px-4 py-2">Session Stop</th>
+                      <th className="px-4 py-2">Game Type</th>
+                      <th className="px-4 py-2">Game</th>
+                      <th className="px-4 py-2">Wager Amount</th>
+                      <th className="px-4 py-2">Wager Number</th>
+                      <th className="px-4 py-2">Win</th>
+                      <th className="px-4 py-2">Loss</th>
+                      <th className="px-4 py-2">Notes</th>
                       <th className="px-4 py-2"></th>
                     </tr>
                   </thead>

@@ -37,7 +37,7 @@ const Input = (prop: any) => {
     }
     const style = "block w-full rounded-md border-0 px-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-3"
     const styleForLable = "block text-sm font-medium leading-6 text-gray-200 bg-black/30 rounded-md w-28"
-    const styleForButton= "flex w-full justify-center rounded-md bg-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-700"
+    const styleForButton= "flex w-full justify-center rounded-md bg-gradient-to-r from-red-600 via-purple-900 to-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gradient-to-l from-red-600 via-purple-900 to-blue-700 transition ease-in-out delay-100 hover:scale-105"
     return (
         <main className='flex flex-col items-center justify-between'>
             <div className='relative w-full'>
