@@ -6,6 +6,9 @@ import '../../styles/globals.css'
 import { redirect } from 'next/navigation'
 import Edit from "./edit"
 import Delete from "./delete"
+import Image from 'next/image';
+import background from '../../public/felt.jpg';
+
 
 const Page = async ({
 
@@ -97,34 +100,43 @@ const Page = async ({
 
 
     return (
-      <div className="h-screen bg-slate-200">
-        <Push />
-        <Filters />
-        <div className="container">
-          <table className="w-screen table-auto">
-            <thead className="bg-slate-300 text-indigo-600">
-              <tr>
-                <th className="px-4 py-2"></th>
-                <th className="px-4 py-2">Casino</th>
-                <th className="px-4 py-2">Machine</th>
-                <th className="px-4 py-2">Session Start</th>
-                <th className="px-4 py-2">Session Stop</th>
-                <th className="px-4 py-2">Game Type</th>
-                <th className="px-4 py-2">Game</th>
-                <th className="px-4 py-2">Wager Amount</th>
-                <th className="px-4 py-2">Wager Number</th>
-                <th className="px-4 py-2">Win</th>
-                <th className="px-4 py-2">Loss</th>
-                <th className="px-4 py-2">Notes</th>
-                <th className="px-4 py-2"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {display}
-            </tbody>
-          </table>
+      <main className='flex flex-col items-center justify-between'>
+        <div className='relative w-full'>
+          <div className='absolute -z-10 w-full'>
+            <Image src={background} alt="background image" className='w-screen h-screen' width={1000} height={1000} />
+          </div>
+          <div>
+            <div className="h-screen">
+              <Push />
+              <Filters />
+              <div className="container">
+                <table className="w-screen table-auto">
+                  <thead className="text-white">
+                    <tr>
+                      <th className="px-4 py-2"></th>
+                      <th className="px-4 py-2 bg-red-600 rounded-md">Casino</th>
+                      <th className="px-4 py-2 bg-black rounded-md">Machine</th>
+                      <th className="px-4 py-2 bg-red-600 rounded-md">Session Start</th>
+                      <th className="px-4 py-2 bg-black rounded-md">Session Stop</th>
+                      <th className="px-4 py-2 bg-red-600 rounded-md">Game Type</th>
+                      <th className="px-4 py-2 bg-black rounded-md">Game</th>
+                      <th className="px-4 py-2 bg-red-600 rounded-md">Wager Amount</th>
+                      <th className="px-4 py-2 bg-black rounded-md">Wager Number</th>
+                      <th className="px-4 py-2 bg-red-600 rounded-md">Win</th>
+                      <th className="px-4 py-2 bg-black rounded-md">Loss</th>
+                      <th className="px-4 py-2 bg-red-600 rounded-md">Notes</th>
+                      <th className="px-4 py-2"></th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-white">
+                    {display}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
     );
   }
 }
