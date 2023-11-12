@@ -98,33 +98,34 @@ export default function Login() {
                   </button>
                 </div>
               </form>
+              <div
+                className='flex w-full justify-center mt-5'>
+                <button
+                  onClick={() => signIn("google")}>
+                  <img
+                    className='w-12 px-2'
+                    src="https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1=w240-h480-rw" alt="" />
+                </button>
+                <button
+                  onClick={() => signIn("github")}>
+                  <img
+                    className='w-12 px-2'
+                    src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="" />
+                </button>
+              </div>
+
+
+              <p className="mt-10 text-center text-sm text-gray-500">
+                Not a member?{' '}
+                <a href="/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                  Sign Up
+                </a>
+              </p>
             </div>
           </div>
         </div>
-        <div
-        className='flex w-full justify-center mt-5'>
-            <button
-              onClick={() => signIn("google")}>
-                <img 
-                className='w-12 px-2'
-                src="https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1=w240-h480-rw" alt=""/>
-            </button>
-            <button
-              onClick={() => signIn("github")}>
-                <img 
-                className='w-12 px-2'
-                src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt=""/>
-            </button>
-        </div>
-
-
-        <p className="mt-10 text-center text-sm text-gray-500">
-          Not a member?{' '}
-          <a href="/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
-            Sign Up
-          </a>
-        </p>
       </div>
+
     </main>
   )
 }
