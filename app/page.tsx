@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useSession, signIn, signOut } from 'next-auth/react'
 import '../styles/globals.css'
+import Google from '../src/img/google.png'
 
 export default function Login() {
   const { data: session } = useSession()
@@ -17,9 +18,8 @@ export default function Login() {
         body: JSON.stringify({ username: username, pw: password, email: session.user.email ?? '' })
       })
       const data = await result.json()
-      console.log(data)
       if (data.isLogin === false && data.canSignUp) {
-        push(`http://localhost:3000/signup`)
+          push(`http://localhost:3000/signup`)
       }
       else if (data.isLogin) {
         console.log('is Login')
@@ -33,8 +33,7 @@ export default function Login() {
     fetchresdata()
   }
   if (session && session.user) {
-    console.log('yes')
-    datapass()
+      datapass()
   }
   useEffect(()=>{
    },[])
@@ -92,15 +91,23 @@ export default function Login() {
               Sign in
             </button>
           </div>
-          <button
-            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            onClick={() => signIn()}>Third Party Login
-          </button>
-          <button
-            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            onClick={() => signOut()}>Sign Out
-          </button>
+
         </form>
+        <div
+        className='flex w-full justify-center mt-5'>
+            <button
+              onClick={() => signIn("google")}>
+                <img 
+                className='w-12 px-2'
+                src="https://play-lh.googleusercontent.com/aFWiT2lTa9CYBpyPjfgfNHd0r5puwKRGj2rHpdPTNrz2N9LXgN_MbLjePd1OTc0E8Rl1=w240-h480-rw" alt=""/>
+            </button>
+            <button
+              onClick={() => signIn("github")}>
+                <img 
+                className='w-12 px-2'
+                src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt=""/>
+            </button>
+        </div>
 
 
         <p className="mt-10 text-center text-sm text-gray-500">
