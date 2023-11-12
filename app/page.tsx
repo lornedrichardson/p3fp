@@ -1,7 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { useSession, signIn,signOut } from 'next-auth/react'
+import { useSession, signIn, signOut } from 'next-auth/react'
 import '../styles/globals.css'
 
 export default function Login() {
@@ -14,12 +14,18 @@ export default function Login() {
       const result = await fetch('api/user', {
         method: 'POST',
         headers: { "Content-type": "application/json; charset=UTF-8" },
-        body: JSON.stringify({ username: username, pw: password,email:session.user.email??''})
+        body: JSON.stringify({ username: username, pw: password, email: session.user.email ?? '' })
       })
       const data = await result.json()
-      if (data.isLogin) {
+      console.log(data)
+      if (data.isLogin === false && data.canSignUp) {
+        push(`http://localhost:3000/signup`)
+      }
+      else if (data.isLogin) {
+        console.log('is Login')
         push(`/games`)
-      } else {
+      }
+      else {
         signOut()
         // alert('dont find match user. Do you want to try again or sign up?')
       }
@@ -30,9 +36,8 @@ export default function Login() {
     console.log('yes')
     datapass()
   }
-  // useEffect(()=>{
-  //   deleteTokens()
-  // },[])
+  useEffect(()=>{
+   },[])
   return (
     <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 h-screen bg-slate-800">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -88,8 +93,12 @@ export default function Login() {
             </button>
           </div>
           <button
-          className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          onClick={() => signIn()}>GOOGLE
+            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            onClick={() => signIn()}>GOOGLE
+          </button>
+          <button
+            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            onClick={() => signOut()}>Sign Out
           </button>
         </form>
 

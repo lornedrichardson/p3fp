@@ -22,11 +22,12 @@ export async function POST(req: Request, res: NextApiResponse) {
                 where: { email: email},
             });
             if (foundUser.length) {
-                console.log(foundUser[0].user_id)
+                console.log('email is true ' + foundUser[0].user_id)
                 cookies().delete("user_id");
                 cookies().set('user_id', String(foundUser[0].user_id));
                 return NextResponse.json({ isLogin: true });
             } else {
+                console.log('email is false')
                 return NextResponse.json({ isLogin: false, canSignUp: true });
             }
         }
