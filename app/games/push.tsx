@@ -17,13 +17,13 @@ const Push = () => {
                         <div className="flex h-20 items-center justify-between">
                             <div className="hidden md:block">
                                 <div className="flex items-baseline space-x-4">
-                                    <a onClick={() => { router.push('/games/create/') }} className="text-white hover:bg-red-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Create New</a>
+                                    <a onClick={() => { router.push('/games/create/') }} className="text-white hover:bg-red-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition ease-in-out delay-100 hover:scale-105">Create New</a>
                                 </div>
                             </div>
                             <div className="hidden md:block">
                                 <div className="flex items-baseline space-x-4">
                                     <button
-                                        className="text-white hover:bg-red-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium ml-auto"
+                                        className="text-white hover:bg-red-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium ml-auto transition ease-in-out delay-100 hover:scale-105"
                                         onClick={() => {
                                             router.push('/')
                                         }}>Sign Out</button>

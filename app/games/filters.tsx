@@ -16,7 +16,7 @@ const Filters = () => {
     const [timeStart, setTimeStart] = useState('')
     const [timeStartDe] = useDebounce(timeStart, 500);
 
-    const styleForLabel = "block text-lg font-medium leading-6 text-white rounded-md bg-red-600 w-28"
+    const styleForLabel = "block text-lg font-medium leading-6 text-white rounded-md bg-red-700 w-28"
     const styleForLabelBlk = "block text-lg font-medium leading-6 text-white rounded-md bg-black w-28"
     const styleForInput = "py-1 rounded-md px-1"
 
@@ -27,7 +27,7 @@ const Filters = () => {
         <div className="py-7 justify-center">
             <form style={{display:'inline-flex'}} className="px-12 w-full justify-center">
                 <div className="px-6">
-                    <label className={styleForLabelBlk}>Location:</label>
+                    <label className={styleForLabelBlk}>Casino:</label>
                     <input type="text" className={styleForInput} onChange={(e) => { setCasino(e.target.value) }} />
                 </div>
                 <div className="px-6">
@@ -35,7 +35,7 @@ const Filters = () => {
                     <input type="text" className={styleForInput} onChange={(e) => { setGameType(e.target.value) }} />
                 </div>
                 <div className="px-6">
-                    <label className={styleForLabelBlk}>Game Name:</label>
+                    <label className={styleForLabelBlk}>Game:</label>
                     <input type="text" className={styleForInput} onChange={(e) => { setGameName(e.target.value) }} />
                 </div>
                 <div className="px-6">
@@ -45,7 +45,7 @@ const Filters = () => {
                 <input 
                 type="reset" 
                 value="Reset" 
-                className="rounded-md bg-black px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="rounded-md bg-black px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-700 transition ease-in-out delay-100 hover:scale-105"
                 onClick={()=>{
                     setCasino('')
                     setGameType('')
