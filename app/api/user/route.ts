@@ -52,3 +52,12 @@ export async function POST(req: Request, res: NextApiResponse) {
         return NextResponse.json({ isLogin: false }, { status: 500 });
     }
 }
+
+export async function DELETE(req: Request, res: NextApiResponse) {
+    try {
+        cookies().delete("user_id");
+        return NextResponse.json({ isSignOut: true });
+    } catch (error) {
+        
+    }
+}
