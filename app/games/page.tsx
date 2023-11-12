@@ -6,8 +6,7 @@ import '../../styles/globals.css'
 import { redirect } from 'next/navigation'
 import Edit from "./edit"
 import Delete from "./delete"
-import Image from 'next/image';
-import background from '../../public/blueFelt.jpg';
+import "../../styles/home.css"
 
 
 const Page = async ({
@@ -95,21 +94,14 @@ const Page = async ({
         </tr>
       );
     });
-
-
-
-
     return (
-      <main className='flex flex-col items-center justify-between'>
+      <main className='flex flex-col items-center justify-between bg-img'>
         <div className='relative w-full'>
-          <div className='absolute -z-10 w-full'>
-            <Image src={background} alt="background image" className='w-screen h-screen' width={1000} height={1000} />
-          </div>
           <div>
-            <div className="h-screen">
+            <div>
               <Push />
               <Filters />
-              <div className="container">
+              <div className="overflow-x-auto">
                 <table className="w-screen table-auto">
                   <thead className="text-white bg-gradient-to-r from-red-700 to-black ">
                     <tr>
