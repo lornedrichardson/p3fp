@@ -17,7 +17,7 @@ model Gamedata {
   game_type     String   @db.VarChar
   game          String   @db.VarChar
   wageramt      Decimal  @db.Money
-  wagernum      Int?
+  wagernum      String?
   win           Decimal? @db.Money
   loss          Decimal? @db.Money
   notes         String?
