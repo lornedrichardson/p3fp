@@ -155,7 +155,7 @@ const Input = (prop: any) => {
                                     />
                                 </div>
                                 <div>
-                                    <label className={styleForLable}>Wager Number:</label>
+                                    <label className={styleForLable}>Times Wagered:</label>
                                     <input type="text"
                                         className={style}
                                         defaultValue={dataInput.wagernum}

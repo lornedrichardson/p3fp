@@ -114,8 +114,6 @@ export default function Login() {
 
                 </button>
               </div>
-
-
               <p className="mt-10 text-center text-sm text-gray-200">
                 Not a member?{' '}
                 <a href="/signup" className="font-semibold leading-6  text-red-600 hover:text-blue-500">
