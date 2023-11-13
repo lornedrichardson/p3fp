@@ -1,13 +1,20 @@
 "use client"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { signOut } from "next-auth/react"
 import '../../styles/globals.css'
 
 const Push = () => {
     const router = useRouter()
     const [editData, setEditData] = useState('')
     const [deleteData, setDeleteData] = useState('')
-
+    const fetchresdata = async () => {
+        const result = await fetch('api/user', {
+            method: 'DELETE',
+            headers: { "Content-type": "application/json; charset=UTF-8" },
+            body: JSON.stringify({})
+        })
+    }
 
     return (
         <div>
@@ -25,7 +32,8 @@ const Push = () => {
                                     <button
                                         className="text-white hover:bg-red-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium ml-auto transition ease-in-out delay-100 hover:scale-105"
                                         onClick={() => {
-                                            router.push('/')
+                                            signOut({callbackUrl:'/'})
+                                            fetchresdata()
                                         }}>Sign Out</button>
                                 </div>
                             </div>
@@ -37,4 +45,4 @@ const Push = () => {
     )
 }
 
-export default Push
+    export default Push
