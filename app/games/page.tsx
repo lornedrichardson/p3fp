@@ -31,6 +31,7 @@ const Page = async ({
     redirect('/')
   } else {
     const auth = cookies().get('user_id').value
+    const username = String(cookies().get('user_name').value)
     const where = {
       user_id: Number(auth),
       casino,
@@ -98,7 +99,7 @@ const Page = async ({
 
     return (
       <div className="h-screen bg-slate-200">
-        <Push />
+        <Push username={username}/>
         <Filters />
         <div className="container">
           <table className="w-screen table-auto">

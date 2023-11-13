@@ -46,7 +46,7 @@
 
 ## :dart: About ##
 
-Describe your project
+We developed this project using Next.js in combination with a Google SQL database. Its primary purpose is to store comprehensive information about casino records. With this system, users have the ability to create new records, make edits, perform searches, and delete data as needed.
 
 ## :sparkles: Features ##
 
@@ -92,7 +92,9 @@ $ yarn start
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Alex, Lorne, Chris, Liqiuzhi</a>
+Made with :heart: by <a href="https://github.com/ALynch95" target="_blank">Alex</a>
+Made with :heart: by <a href="https://github.com/lornedrichardson" target="_blank">Lorne</a>
+Made with :heart: by <a href="https://github.com/leecodexxe" target="_blank">Liqiuzhi</a>
 
 &#xa0;
 
