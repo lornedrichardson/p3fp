@@ -58,12 +58,13 @@ We developed this project using Next.js in combination with a Google SQL databas
 
 The following tools were used in this project:
 
-- [Expo](https://expo.io/)
 - [Node.js](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)
 - [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Next.JS]
+- [Next.JS](https://nextjs.org/)
+- [Next Auth](https://next-auth.js.org/)
+- [Tail Wind](https://tailwindcss.com/)
 
 ## :white_check_mark: Requirements ##
 
