@@ -1,8 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 import { prisma } from '../../../../server/db/client';
 
-export async function POST(req: Request, res: NextApiResponse) {
+export async function POST(req: Request, res: Response) {
   try {
     const { username, pw ,email } = await req.json();
     const data = await prisma.userdata.create({

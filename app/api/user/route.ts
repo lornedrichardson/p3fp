@@ -1,9 +1,8 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 import { prisma } from '../../../server/db/client';
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET(req: Request , res: Response) {
     try {
         const data = await prisma.userdata.findMany();
         return NextResponse.json({ data });
@@ -13,7 +12,7 @@ export async function GET(req: NextApiRequest, res: NextApiResponse) {
     }
 }
 
-export async function POST(req: Request, res: NextApiResponse) {
+export async function POST(req: Request, res: Response) {
     try {
         const { username, pw, email } = await req.json()
         if (email) {
@@ -39,7 +38,7 @@ export async function POST(req: Request, res: NextApiResponse) {
     }
 }
 
-export async function PUT(req: Request, res: NextApiResponse) {
+export async function PUT(req: Request, res: Response) {
     const { user_id, data }= await req.json()
     console.log(data,user_id)
     cookies().set('user_name', String(data.username));
@@ -56,7 +55,7 @@ export async function PUT(req: Request, res: NextApiResponse) {
     }
 }
 
-export async function DELETE(req: Request, res: NextApiResponse) {
+export async function DELETE(req: Request, res: Response) {
     try {
         cookies().delete("user_id");
         cookies().delete("user_name");
