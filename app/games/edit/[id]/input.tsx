@@ -27,7 +27,6 @@ const Input = (prop: any) => {
             body: JSON.stringify({ session_id: prop.session, data: dataInput })
         })
         const data = await result.json()
-        console.log(data)
         if (data.Edit) {
             router.push('/games')
         }

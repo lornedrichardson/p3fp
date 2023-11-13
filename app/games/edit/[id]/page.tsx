@@ -9,7 +9,6 @@ async function Page({ params }: { params: { id: number } }) {
         where: { session_id: session}
     })
     if(dataGetFromParams){
-    console.log(dataGetFromParams)
     const auth = cookies().get('user_id').value
     return (
         <div>

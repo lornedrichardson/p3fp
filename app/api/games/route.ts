@@ -17,7 +17,6 @@ export async function POST(request) {
         })
         return NextResponse.json({ Create: true })     
     } catch (error) {
-        console.log(error)
         return NextResponse.json({Create: false},{status:500})
     }
 }

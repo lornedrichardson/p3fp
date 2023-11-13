@@ -10,10 +10,9 @@ const Profile = async() => {
             user_id:id
         }
     })
-    console.log(data)
     return(
         <div>
-            <EditUser data={data}/>
+            <EditUser data={data} id={id}/>
             <p>{data.username}</p>
         </div>
     )
