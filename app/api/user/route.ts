@@ -27,7 +27,6 @@ export async function POST(req: Request, res: NextApiResponse) {
             });
         }
         if (foundUser.length) {
-            console.log('email is true ' + foundUser[0].user_id)
             cookies().set('user_id', String(foundUser[0].user_id));
             cookies().set('user_name', String(foundUser[0].username));
             return NextResponse.json({ isLogin: true });
@@ -37,6 +36,23 @@ export async function POST(req: Request, res: NextApiResponse) {
     } catch (error) {
         console.error('Error authenticating user:', error);
         return NextResponse.json({ isLogin: false }, { status: 500 });
+    }
+}
+
+export async function PUT(req: Request, res: NextApiResponse) {
+    const { user_id, data }= await req.json()
+    console.log(data,user_id)
+    cookies().set('user_name', String(data.username));
+    try {
+        const dataInput = await prisma.userdata.update({
+            where:{
+                user_id: user_id,
+            },
+            data
+        })
+        return NextResponse.json({ Edit:true })
+    } catch (error) {
+        return NextResponse.json({Edit: false},{status:500})
     }
 }
 

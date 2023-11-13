@@ -1,5 +1,5 @@
 "use client"
-import { redirect, useRouter } from "next/navigation"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { signOut } from "next-auth/react"
 import '../../styles/globals.css'
@@ -16,7 +16,7 @@ const Push = ({ username }) => {
         })
     }
     const buttonStyle = "text-white hover:bg-red-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium ml-auto transition ease-in-out delay-100 hover:scale-105"
-
+    router.refresh()
     return (
         <div>
             <div className="min-h-full">
