@@ -2,7 +2,8 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import '../../../../styles/globals.css'
-
+import Image from 'next/image';
+import background from '../../../../public/neonSymb.jpg';
 
 const Input = (prop: any) => {
     const router = useRouter()
@@ -32,168 +33,177 @@ const Input = (prop: any) => {
         }
     }
 
-    const styleForLable = "block text-sm font-medium leading-5 text-gray-400"
+    const styleForLable = "block text-sm font-medium leading-6 text-gray-200 bg-black/30 rounded-md w-28"
     const styleForInput = "block w-full rounded-md border-0 py-1.5 px-1 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-4"
-    const styleForButton = "flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+    const styleForButton = "flex w-full justify-center rounded-md bg-gradient-to-r from-red-600 via-purple-900 to-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gradient-to-l from-red-600 via-purple-900 to-blue-700 transition ease-in-out delay-100 hover:scale-105"
 
     return (
-        <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 h-screen bg-slate-800">
-            <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <main className='flex flex-col items-center justify-between'>
+            <div className='relative w-full'>
+                <div className='absolute -z-10 w-full'>
+                    <Image src={background} alt="background image" className='w-screen h-screen' width={1000} height={1000} />
+                </div>
+                <div>
+                    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 h-screen">
+                        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+                        </div>
+                        <div className="mt- sm:mx-auto sm:w-full sm:max-w-sm">
+                            <form
+                                className="space-y-6"
+                                onSubmit={(e) => {
+                                    e.preventDefault()
+                                    datapass()
+                                }}>
+                                <div>
+                                    <label className={styleForLable}>Casino:</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.casino}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                casino: e.target.value
+                                            }));
+                                        }} required />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Machine</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.machine}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                machine: e.target.value
+                                            }));
+                                        }}
+                                        required />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Session Start</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.session_start}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                session_start: e.target.value
+                                            }));
+                                        }}
+                                        required />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Session End</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.session_stop}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                session_stop: e.target.value
+                                            }));
+                                        }}
+                                        required />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Game Type:</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.game_type}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                game_type: e.target.value
+                                            }));
+                                        }}
+                                        required />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Game Name:</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.game}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                game: e.target.value
+                                            }));
+                                        }}
+                                        required />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Wager Amount:</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.wageramt}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                wageramt: e.target.value
+                                            }));
+                                        }}
+                                        required />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Times Wagered:</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.wagernum}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                wagernum: e.target.value
+                                            }));
+                                        }}
+                                    />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Amount Win:</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.win}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                win: e.target.value
+                                            }));
+                                        }}
+                                    />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Amount Loss:</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.loss}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                loss: e.target.value
+                                            }));
+                                        }}
+                                    />
+                                </div>
+                                <div>
+                                    <label className={styleForLable}>Note:</label>
+                                    <input type="text"
+                                        className={styleForInput}
+                                        defaultValue={dataInput.note}
+                                        onChange={(e) => {
+                                            setDataInput(prevState => ({
+                                                ...prevState,
+                                                note: e.target.value
+                                            }));
+                                        }}
+                                    />
+                                </div>
+                                <button type="submit" className={styleForButton}>Submit</button>
+                                <button type="button" className={styleForButton} onClick={() => { router.push('/games') }}>Home page</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="mt- sm:mx-auto sm:w-full sm:max-w-sm">
-                <form
-                    className="space-y-6"
-                    onSubmit={(e) => {
-                        e.preventDefault()
-                        datapass()
-                    }}>
-                    <div>
-                        <label className={styleForLable}>Casino:</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.casino}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    casino: e.target.value
-                                }));
-                            }} required />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Machine</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.machine}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    machine: e.target.value
-                                }));
-                            }}
-                            required />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Session Start</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.session_start}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    session_start: e.target.value
-                                }));
-                            }}
-                            required />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Session End</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.session_stop}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    session_stop: e.target.value
-                                }));
-                            }}
-                            required />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Game Type:</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.game_type}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    game_type: e.target.value
-                                }));
-                            }}
-                            required />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Game Name:</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.game}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    game: e.target.value
-                                }));
-                            }}
-                            required />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Wager Amount:</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.wageramt}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    wageramt: e.target.value
-                                }));
-                            }}
-                            required />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Wager number of times:</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.wagernum}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    wagernum: e.target.value
-                                }));
-                            }}
-                        />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Amount Win:</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.win}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    win: e.target.value
-                                }));
-                            }}
-                        />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Amount Loss:</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.loss}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    loss: e.target.value
-                                }));
-                            }}
-                        />
-                    </div>
-                    <div>
-                        <label className={styleForLable}>Note:</label>
-                        <input type="text"
-                            className={styleForInput}
-                            defaultValue={dataInput.note}
-                            onChange={(e) => {
-                                setDataInput(prevState => ({
-                                    ...prevState,
-                                    note: e.target.value
-                                }));
-                            }}
-                        />
-                    </div>
-                    <button type="submit" className={styleForButton}>Submit</button>
-                    <button type="button" className={styleForButton} onClick={() => { router.push('/games') }}>Home page</button>
-                </form>
-            </div>
-        </div>
+        </main>
     )
 }
 

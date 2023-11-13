@@ -64,19 +64,19 @@ export default function Login() {
                 datapass()
               }}>
                 <div>
-                  <label htmlFor="userName" className="block text-sm font-medium leading-6 text-gray-200">
+                  <label htmlFor="userName" className="block text-sm font-medium leading-6 text-gray-200 text-center">
                     Username
                   </label>
                   <div className="mt-2">
                     <input
                       type="text" onChange={(e) => setUsername(e.target.value)}
-                      className="block w-full px-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
+                      className="block w-full px-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 indent-1"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-center">
                     <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-200">
                       Password
                     </label>
@@ -84,7 +84,7 @@ export default function Login() {
                   <div className="mt-2">
                     <input
                       type="password" onChange={(e) => setPassword(e.target.value)}
-                      className="block w-full px-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
+                      className="block w-full px-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 indent-1"
                     />
                   </div>
                 </div>
@@ -92,7 +92,7 @@ export default function Login() {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="flex w-full justify-center rounded-md bg-gradient-to-r from-red-600 via-purple-900 to-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gradient-to-l from-red-600 via-purple-900 to-blue-700 transition ease-in-out delay-100 hover:scale-105"
                   >
                     Sign in
                   </button>
@@ -111,13 +111,12 @@ export default function Login() {
                   <img
                     className='w-12 px-2'
                     src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" alt="" />
+
                 </button>
               </div>
-
-
-              <p className="mt-10 text-center text-sm text-gray-500">
+              <p className="mt-10 text-center text-sm text-gray-200">
                 Not a member?{' '}
-                <a href="/signup" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+                <a href="/signup" className="font-semibold leading-6  text-red-600 hover:text-blue-500">
                   Sign Up
                 </a>
               </p>
@@ -125,7 +124,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-
     </main>
   )
 }
