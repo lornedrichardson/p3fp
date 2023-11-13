@@ -1,10 +1,10 @@
 "use client"
-import { useRouter } from "next/navigation"
+import { redirect, useRouter } from "next/navigation"
 import { useState } from "react"
 import { signOut } from "next-auth/react"
 import '../../styles/globals.css'
 
-const Push = () => {
+const Push = ({ username }) => {
     const router = useRouter()
     const [editData, setEditData] = useState('')
     const [deleteData, setDeleteData] = useState('')
@@ -15,6 +15,7 @@ const Push = () => {
             body: JSON.stringify({})
         })
     }
+    const buttonStyle = "text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium justify-end"
 
     return (
         <div>
@@ -26,6 +27,16 @@ const Push = () => {
                                 <div className="flex items-baseline space-x-4">
                                     <a onClick={() => { router.push('/games/create/') }} className="text-white hover:bg-red-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium transition ease-in-out delay-100 hover:scale-105">Create New</a>
                                 </div>
+                                <p
+                                        className="text-white hover:bg-red-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium ml-auto transition ease-in-out delay-100 hover:scale-105"
+                                    >Welcome Back! {username}</p>
+                                    <button
+                                        className="text-white hover:bg-red-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium ml-auto transition ease-in-out delay-100 hover:scale-105"
+                                        onClick={() => {
+                                            router.push('/profile')
+                                        }
+                                        }>Edit Profile</button>
+                                    <div>
                             </div>
                             <div className="">
                                 <div className="flex items-baseline space-x-4">
@@ -38,6 +49,7 @@ const Push = () => {
                                 </div>
                             </div>
                         </div>
+                        </div>
                     </div>
                 </nav>
             </div>
@@ -45,4 +57,4 @@ const Push = () => {
     )
 }
 
-    export default Push
+export default Push

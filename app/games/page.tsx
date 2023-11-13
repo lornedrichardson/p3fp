@@ -33,6 +33,7 @@ const Page = async ({
     redirect('/')
   } else {
     const auth = cookies().get('user_id').value
+    const username = String(cookies().get('user_name').value)
     const where = {
       user_id: Number(auth),
       casino,
@@ -99,7 +100,7 @@ const Page = async ({
         <div className='relative w-full'>
           <div>
             <div>
-              <Push />
+            <Push username={username}/>
               <Filters />
               <div className="overflow-x-auto">
                 <table className="w-screen table-auto">
