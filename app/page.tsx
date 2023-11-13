@@ -70,7 +70,7 @@ export default function Login() {
                   <div className="mt-2">
                     <input
                       type="text" onChange={(e) => setUsername(e.target.value)}
-                      className="block w-full px-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 indent-1"
+                      className="block w-40 md:w-80 lg:w-96 px-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 indent-1 mx-auto "
                     />
                   </div>
                 </div>
@@ -84,7 +84,7 @@ export default function Login() {
                   <div className="mt-2">
                     <input
                       type="password" onChange={(e) => setPassword(e.target.value)}
-                      className="block w-full px-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 indent-1"
+                      className="block w-40 md:w-80 lg:w-96 px-1 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 indent-1 mx-auto"
                     />
                   </div>
                 </div>
@@ -92,7 +92,7 @@ export default function Login() {
                 <div>
                   <button
                     type="submit"
-                    className="flex w-full justify-center rounded-md bg-gradient-to-r from-red-600 via-purple-900 to-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gradient-to-l from-red-600 via-purple-900 to-blue-700 transition ease-in-out delay-100 hover:scale-105"
+                    className="flex w-40 md:w-80 lg:w-96 justify-center rounded-md bg-gradient-to-r from-red-600 via-purple-900 to-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gradient-to-l from-red-600 via-purple-900 to-blue-700 transition ease-in-out delay-100 hover:scale-105 mx-auto"
                   >
                     Sign in
                   </button>
