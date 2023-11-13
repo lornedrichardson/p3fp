@@ -6,6 +6,8 @@ import '../../styles/globals.css'
 import { redirect } from 'next/navigation'
 import Edit from "./edit"
 import Delete from "./delete"
+import "../../styles/home.css"
+
 
 const Page = async ({
 
@@ -93,39 +95,41 @@ const Page = async ({
         </tr>
       );
     });
-
-
-
-
     return (
-      <div className="h-screen bg-slate-200">
-        <Push username={username}/>
-        <Filters />
-        <div className="container">
-          <table className="w-screen table-auto">
-            <thead className="bg-slate-300 text-indigo-600">
-              <tr>
-                <th className="px-4 py-2"></th>
-                <th className="px-4 py-2">Casino</th>
-                <th className="px-4 py-2">Machine</th>
-                <th className="px-4 py-2">Session Start</th>
-                <th className="px-4 py-2">Session Stop</th>
-                <th className="px-4 py-2">Game Type</th>
-                <th className="px-4 py-2">Game</th>
-                <th className="px-4 py-2">Wager Amount</th>
-                <th className="px-4 py-2">Wager number of times</th>
-                <th className="px-4 py-2">Win</th>
-                <th className="px-4 py-2">Loss</th>
-                <th className="px-4 py-2">Notes</th>
-                <th className="px-4 py-2"></th>
-              </tr>
-            </thead>
-            <tbody>
-              {display}
-            </tbody>
-          </table>
+      <main className='flex flex-col items-center justify-between bg-img'>
+        <div className='relative w-full'>
+          <div>
+            <div>
+            <Push username={username}/>
+              <Filters />
+              <div className="overflow-x-auto">
+                <table className="w-screen table-auto">
+                  <thead className="text-white bg-gradient-to-r from-red-700 to-black ">
+                    <tr>
+                      <th className="px-4 py-2"></th>
+                      <th className="px-4 py-2">Casino</th>
+                      <th className="px-4 py-2">Machine</th>
+                      <th className="px-4 py-2">Session Start</th>
+                      <th className="px-4 py-2">Session Stop</th>
+                      <th className="px-4 py-2">Game Type</th>
+                      <th className="px-4 py-2">Game</th>
+                      <th className="px-4 py-2">Wager Amount</th>
+                      <th className="px-4 py-2">Times Wagered</th>
+                      <th className="px-4 py-2">Win</th>
+                      <th className="px-4 py-2">Loss</th>
+                      <th className="px-4 py-2">Notes</th>
+                      <th className="px-4 py-2"></th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-white">
+                    {display}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </main>
     );
   }
 }
