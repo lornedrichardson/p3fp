@@ -16,6 +16,7 @@ export async function GET(req: Request , res: Response) {
 export async function POST(req: Request, res: Response) {
     var output_user_id
     var isInData
+    var outputUsername
     try {
         const { username, pw, email } = await req.json()
         if (email) {
@@ -24,6 +25,7 @@ export async function POST(req: Request, res: Response) {
             });
             if(foundUser){
                 output_user_id = foundUser.user_id
+                outputUsername = foundUser.username
                 isInData = true
             }
 
@@ -37,12 +39,13 @@ export async function POST(req: Request, res: Response) {
                 if(ans){
                     isInData = true
                     output_user_id = value.user_id
+                    outputUsername = value.username
                 }
             })
         }
         if (isInData) {
             cookies().set('user_id', String(output_user_id));
-            cookies().set('user_name', String(username));
+            cookies().set('user_name', String(outputUsername));
             return NextResponse.json({ isLogin: true });
         } else {
             if(email){
