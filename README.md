@@ -65,6 +65,7 @@ The following tools were used in this project:
 - [Next.JS](https://nextjs.org/)
 - [Next Auth](https://next-auth.js.org/)
 - [Tail Wind](https://tailwindcss.com/)
+- [daisyUI](https://daisyui.com/docs/install/)
 
 ## :white_check_mark: Requirements ##
 
