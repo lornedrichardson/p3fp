@@ -30,6 +30,9 @@ export async function POST(req: Request, res: Response) {
             cookies().set('user_name', String(foundUser[0].username));
             return NextResponse.json({ isLogin: true });
         } else {
+            if(email){
+                return NextResponse.json({ isLogin: false, canSignUp:true})
+            }
             return NextResponse.json({ isLogin: false });
         }
     } catch (error) {
