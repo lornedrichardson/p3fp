@@ -13,8 +13,7 @@ export default function Page() {
     const { push } = useRouter()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
-    const [isCreate, setIsCreate] = useState(true)
+    const [email, setEmail] = useState(' ')
     const datapass = () => {
         const fetchresdata = async () => {
             const result = await fetch('api/user/signup', {
@@ -26,7 +25,7 @@ export default function Page() {
             if (data.isCreate) {
                 push(`/`)
             } else {
-                setIsCreate(data.isCreate)
+                alert('The username is already being used please try a different one')
             }
         }
         fetchresdata()
@@ -64,7 +63,7 @@ export default function Page() {
                                         datapass()
                                     }
                                     else {
-                                        alert('Please try different username and password')
+                                        alert('Please Enter username or password')
                                     }
                                 }}>
                                 <div>
@@ -73,14 +72,16 @@ export default function Page() {
                                         className="block w-40 md:w-80 lg:w-96 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-lg sm:leading-6 indent-2 mx-auto"
                                         type="text"
                                         defaultValue={username}
-                                        onChange={(e) => setUsername(e.target.value)} />
+                                        onChange={(e) => setUsername(e.target.value)} 
+                                        required/>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium leading-6 text-gray-200">Password</label>
                                     <input
                                         className="block w-40 md:w-80 lg:w-96 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 indent-2 mx-auto"
                                         type="password"
-                                        onChange={(e) => setPassword(e.target.value)} />
+                                        onChange={(e) => setPassword(e.target.value)} 
+                                        required/>
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium leading-6 text-gray-200">Email</label>
@@ -88,7 +89,8 @@ export default function Page() {
                                         className="block w-40 md:w-80 lg:w-96 rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6 indent-2 mx-auto"
                                         type="email"
                                         defaultValue={email}
-                                        onChange={(e) => setEmail(e.target.value)} />
+                                        onChange={(e) => setEmail(e.target.value)} 
+                                        required/>
                                 </div>
                                 <button
                                     className="flex w-40 md:w-80 lg:w-96 justify-center rounded-md bg-gradient-to-r from-red-600 via-purple-900 to-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gradient-to-l from-red-600 via-purple-900 to-blue-700 transition ease-in-out delay-100 hover:scale-105 mx-auto"
@@ -99,7 +101,6 @@ export default function Page() {
                                         signOut({ callbackUrl: '/' })
                                     }}>Login page</button>
                             </form>
-                            {isCreate ? '' : 'Username exists. Please try different username.'}
                         </div>
                     </div>
                 </div>

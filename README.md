@@ -65,6 +65,7 @@ The following tools were used in this project:
 - [Next.JS](https://nextjs.org/)
 - [Next Auth](https://next-auth.js.org/)
 - [Tail Wind](https://tailwindcss.com/)
+- [Bycrpty](https://www.npmjs.com/package/bcrypt)
 
 ## :white_check_mark: Requirements ##
 

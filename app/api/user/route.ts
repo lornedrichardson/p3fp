@@ -34,7 +34,7 @@ export async function POST(req: Request, res: Response) {
             const foundUser = await prisma.userdata.findMany({
                 where: { username },
             });
-            var anss = foundUser.map((value,i)=>{
+            foundUser.map((value,i)=>{
                 let ans = bcrypt.compareSync(pw, value.pw);
                 if(ans){
                     isInData = true
