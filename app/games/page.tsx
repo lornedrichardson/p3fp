@@ -96,7 +96,7 @@ const Page = async ({
       );
     });
     return (
-      <main className='flex flex-col items-center justify-between bg-img'>
+      <div className='flex flex-col items-center justify-between bg-img'>
         <div className='relative w-full'>
           <div>
             <div>
@@ -129,7 +129,7 @@ const Page = async ({
             </div>
           </div>
         </div>
-      </main>
+      </div>
     );
   }
 }

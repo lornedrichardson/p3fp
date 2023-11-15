@@ -5,7 +5,7 @@ export default function RootLayout({
   }) {
     return (
       <html lang="en">
-        <title>Game Data</title>
+        <title>Create Data</title>
         <body className="bg-img">
           {children}
         </body>
