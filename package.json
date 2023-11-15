@@ -12,11 +12,11 @@
     "cors": "^2.8.5",
     "next": "^14.0.2",
     "next-auth": "^4.24.4",
-    "next-superjson-plugin": "^0.5.9",
+    "next-superjson-plugin": "^0.5.10",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
-    "superjson": "^1.13.1",
+    "superjson": "^2.2.1",
     "use-debounce": "^9.0.4",
     "web-vitals": "^2.1.4"
   },
