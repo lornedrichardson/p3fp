@@ -22,6 +22,7 @@ const Filters = () => {
 
     useEffect(() => {
         router.push(`/games?casino=${casinoDe}&gameType=${gameTypeDe}&gameName=${gameNameDe}&timeStart=${timeStartDe}`)
+        router.refresh()
     }, [casinoDe, router, gameTypeDe, gameNameDe, timeStartDe])
     return (
 <div className="py-7 flex items-center justify-center">

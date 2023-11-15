@@ -11,7 +11,7 @@ const EditUser = (prop: any) => {
     const router = useRouter()
     const [dataInput, setDataInput] = useState({
         username: prop.data.username,
-        pw: prop.data.pw,
+        pw:'',
         email: prop.data.email,
     })
     const datapass = async () => {
@@ -60,16 +60,15 @@ const EditUser = (prop: any) => {
                                 </div>
                                 <div>
                                     <label className={styleForLable}>password:</label>
-                                    <input type="text"
+                                    <input type="password"
                                         className={styleForInput}
-                                        defaultValue={dataInput.pw}
                                         onChange={(e) => {
                                             setDataInput(prevState => ({
                                                 ...prevState,
                                                 pw: e.target.value
                                             }));
                                         }}
-                                        required />
+                                        />
                                 </div>
                                 <div>
                                     <label className={styleForLable}>email:</label>

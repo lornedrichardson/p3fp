@@ -20,7 +20,7 @@ export default function Page() {
             const result = await fetch('api/user/signup', {
                 method: 'POST',
                 headers: { "Content-type": "application/json; charset=UTF-8" },
-                body: JSON.stringify({ username: username, pw: password, email:session.user.email ?? email})
+                body: JSON.stringify({ username: username, pw: password, email:session ? session.user.email : email})
             })
             const data = await result.json()
             if (data.isCreate) {
