@@ -10,6 +10,7 @@ const Profile = async() => {
             user_id:id
         }
     })
+    console.log(data.username)
     return(
         <div>
             <EditUser data={data} id={id}/>
