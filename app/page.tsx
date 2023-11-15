@@ -21,6 +21,7 @@ export default function Login() {
       })
       const data = await result.json()
       if (data.isLogin === false && data.canSignUp) {
+        alert('Now will sign you pu')
           push(`http://localhost:3000/signup`)
       }
       else if (data.isLogin) {
