@@ -73,7 +73,7 @@ const Page = async ({
         if (prop === 'session_id') {
           return data
         }
-        if (prop === 'wageramt' || prop === 'wagernum' || prop === 'win' || prop === 'loss') {
+        if (prop === 'wageramt' || prop === 'win' || prop === 'loss') {
           return (
             <td
               key={prop}
