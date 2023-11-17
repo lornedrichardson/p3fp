@@ -59,11 +59,27 @@ const Page = async ({
     let display = allGameData.map((arr, index) => {
       const rowData = Object.getOwnPropertyNames(arr).map((prop) => {
         const data = Object.getOwnPropertyDescriptor(arr, prop).value;
+        if (data === null || data === undefined) {
+          return (
+            <td
+              key={prop}
+              className="px-7 py-2 font-serif text-center"
+            >{`${'-'}`}</td>
+          );
+        }
         if (prop === 'user_id') {
           return null
         }
         if (prop === 'session_id') {
           return data
+        }
+        if (prop === 'wageramt' || prop === 'wagernum' || prop === 'win' || prop === 'loss') {
+          return (
+            <td
+              key={prop}
+              className="px-7 py-2 font-serif text-center"
+            >{`${'$ ' + data.toFixed(2)}`}</td>
+          );
         }
         if (prop === 'session_start' || prop === 'session_stop') {
           const time = String(data).slice(0, 24);
