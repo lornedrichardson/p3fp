@@ -13,7 +13,7 @@ const Input = (prop: any) => {
         machine: null,
         session_start: null,
         session_stop: null,
-        game_type: null,
+        game_type: 'Slot',
         game: null,
         wageramt: null,
         wagernum: null,
@@ -31,13 +31,13 @@ const Input = (prop: any) => {
             alert('Created successfully!')
             router.push('/games')
         }
-        else{
+        else {
             alert('Created unsuccessfully! Please try again')
         }
     }
     const style = "block w-40 md:w-80 lg:w-96 rounded-md border-0 px-1 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-3 mx-auto"
     const styleForLable = "block text-sm font-medium leading-6 text-gray-200 bg-black/30 rounded-md w-28 mx-auto text-center"
-    const styleForButton= "flex w-40 md:w-80 lg:w-96 justify-center rounded-md bg-gradient-to-r from-red-600 via-purple-900 to-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gradient-to-l from-red-600 via-purple-900 to-blue-700 transition ease-in-out delay-100 hover:scale-105 mx-auto"
+    const styleForButton = "flex w-40 md:w-80 lg:w-96 justify-center rounded-md bg-gradient-to-r from-red-600 via-purple-900 to-blue-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-gradient-to-l from-red-600 via-purple-900 to-blue-700 transition ease-in-out delay-100 hover:scale-105 mx-auto"
     return (
         <main className='flex flex-col items-center justify-between'>
             <div className='relative w-full'>
@@ -114,17 +114,21 @@ const Input = (prop: any) => {
                                 </div>
                                 <div>
                                     <label className={styleForLable}>Game Type:</label>
-                                    <input type="text"
+                                    <select id="cars" name="cars"
                                         className={style}
-                                        defaultValue={dataInput.game_type}
                                         onChange={(e) => {
                                             setDataInput(prevState => ({
                                                 ...prevState,
                                                 game_type: e.target.value
                                             }));
+                                            console.log(e.target.value);
                                         }}
                                         required
-                                    />
+                                    >
+                                        <option value="Slot">Slot</option>
+                                        <option value="Video Poker">Video Poker</option>
+                                        <option value="Table Game">Table Game</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label className={styleForLable}>Game Name:</label>
