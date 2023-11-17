@@ -105,16 +105,22 @@ const Input = (prop: any) => {
                                 </div>
                                 <div>
                                     <label className={styleForLable}>Game Type:</label>
-                                    <input type="text"
+                                    <select id="cars" name="cars"
                                         className={styleForInput}
-                                        defaultValue={dataInput.game_type}
                                         onChange={(e) => {
                                             setDataInput(prevState => ({
                                                 ...prevState,
                                                 game_type: e.target.value
                                             }));
+                                            console.log(e.target.value);
                                         }}
-                                        required />
+                                        defaultValue={dataInput.game_type}
+                                        required
+                                    >
+                                        <option value="Slot">Slot</option>
+                                        <option value="Video Poker">Video Poker</option>
+                                        <option value="Table Game">Table Game</option>
+                                    </select>
                                 </div>
                                 <div>
                                     <label className={styleForLable}>Game Name:</label>
