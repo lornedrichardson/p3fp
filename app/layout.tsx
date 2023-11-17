@@ -8,6 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <title>Slot Tracker</title>
       <body>
         <Providers>
           {children}

@@ -12,7 +12,7 @@ async function Page({ params }: { params: { id: number } }) {
     const auth = cookies().get('user_id').value
     return (
         <div>
-            <Input data={dataGetFromParams} session={session} auth={auth} superjson/>
+            <Input data={dataGetFromParams} session={session} auth={auth}/>
         </div>
     )
 }else{

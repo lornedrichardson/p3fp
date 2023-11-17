@@ -13,7 +13,7 @@ export default function Page() {
     const { push } = useRouter()
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [email, setEmail] = useState(' ')
+    const [email, setEmail] = useState('')
     const datapass = () => {
         const fetchresdata = async () => {
             const result = await fetch('api/user/signup', {
